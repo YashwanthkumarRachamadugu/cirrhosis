@@ -39,8 +39,8 @@ from sklearn.preprocessing import LabelEncoder, OneHotEncoder, RobustScaler, Sta
 from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
 
-from imblearn.over_sampling import SMOTE
-from imblearn.pipeline import Pipeline as ImbPipeline
+#from imblearn.over_sampling import SMOTE
+#from imblearn.pipeline import Pipeline as ImbPipeline
 
 try:
     from catboost import CatBoostClassifier
@@ -649,8 +649,8 @@ def render_modeling(
         stratify=safe_stratify(y),
     )
 
-    smote = SMOTE(random_state=RANDOM_STATE)
-    X_train, y_train = smote.fit_resample(X_train, y_train)
+    #smote = SMOTE(random_state=RANDOM_STATE)
+    #X_train, y_train = smote.fit_resample(X_train, y_train)
 
     catalog = build_model_catalog(X, controls, len(labels))
     if uploaded_model is not None and hasattr(uploaded_model, "fit"):
